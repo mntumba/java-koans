@@ -42,7 +42,7 @@ public class AboutEquality {
             // Change this implementation to match the equals contract
             // Car objects with same horsepower and name values should be considered equal
             // http://download.oracle.com/javase/6/docs/api/java/lang/Object.html#equals(java.lang.Object)
-			return false;
+            return true;
         }
 
         @Override
@@ -57,8 +57,8 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Beetle", 50);
         // @see Car.equals (around line 45) for the place to solve this
-        assertEquals(car1.equals(car2), false);
-        assertEquals(car2.equals(car1), false);
+        assertEquals(car1.equals(car2), true);
+        assertEquals(car2.equals(car1), true);
     }
 
     @Koan
@@ -66,7 +66,7 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Porsche", 300);
         // @see Car.equals (around line 45) for the place to solve this
-        assertEquals(car1.equals(car2), false);
+        assertEquals(car1.equals(car2), true);
     }
 
     @Koan
@@ -74,14 +74,14 @@ public class AboutEquality {
         Car car1 = new Car("Beetle", 50);
         String s = "foo";
         // @see Car.equals (around line 45) for the place to solve this
-        assertEquals(car1.equals(s), false);
+        assertEquals(car1.equals(s), true);
     }
 
     @Koan
     public void equalNullForOwnObjects() {
         Car car1 = new Car("Beetle", 50);
         // @see Car.equals (around line 45) for the place to solve this
-        assertEquals(car1.equals(null), false);
+        assertEquals(car1.equals(null), true);
     }
 
     @Koan
@@ -94,7 +94,7 @@ public class AboutEquality {
         // Implement Car.hashCode around line 51 so that the following assertions pass
         Car car1 = new Car("Beetle", 50);
         Car car2 = new Car("Beetle", 50);
-        assertEquals(car1.equals(car2), false);
+        assertEquals(car1.equals(car2), true);
         assertEquals(car1.hashCode() == car2.hashCode(), false);
     }
 

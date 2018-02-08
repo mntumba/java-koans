@@ -18,8 +18,7 @@ public class AboutMocks {
 	
 	static class TheCollaborator implements Collaborator {
         public void doBusinessStuff() {
-            //fail("Default collaborator's behavior is complicating testing.");
-			return;
+            return;
         }
     }
 

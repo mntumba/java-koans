@@ -19,7 +19,7 @@ public class AboutRequireNotNull {
         } catch (NullPointerException ex) {
             s = "caught a NullPointerException";
         }
-        assertEquals(s, "caught a NullPointerException");
+        assertEquals(s, "caught a NullPointerException" );
     }
 
     @Koan

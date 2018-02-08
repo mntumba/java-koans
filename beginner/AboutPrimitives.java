@@ -67,8 +67,8 @@ public class AboutPrimitives {
 
     @Koan
     public void shortsHaveASmallerRangeThanInts() {
-        assertEquals(Short.MIN_VALUE, Short.MIN_VALUE);  // hint: You'll need an explicit cast
-        assertEquals(Short.MAX_VALUE, Short.MAX_VALUE);
+        assertEquals(Short.MIN_VALUE, (short)-32768);  // hint: You'll need an explicit cast
+        assertEquals(Short.MAX_VALUE, (short)32767);
     }
 
     @Koan
@@ -89,8 +89,8 @@ public class AboutPrimitives {
 
     @Koan
     public void bytesHaveASmallerRangeThanShorts() {
-        assertEquals(Byte.MIN_VALUE, Byte.MIN_VALUE);
-        assertEquals(Byte.MAX_VALUE, Byte.MAX_VALUE);
+        assertEquals(Byte.MIN_VALUE, (byte)-128);
+        assertEquals(Byte.MAX_VALUE, (byte)127);
 
         // Why would you use short or byte considering that you need to do explicit casts?
     }
@@ -118,8 +118,8 @@ public class AboutPrimitives {
 
     @Koan
     public void charsCanOnlyBePositive() {
-        assertEquals((int) Character.MIN_VALUE, (int) Character.MIN_VALUE);
-        assertEquals((int) Character.MAX_VALUE, (int) Character.MAX_VALUE);
+        assertEquals((int) Character.MIN_VALUE, 0);
+        assertEquals((int) Character.MAX_VALUE, 65535);
 
         // Why did we cast MIN_VALUE and MAX_VALUE to int? Try it without the cast.
     }
@@ -155,7 +155,7 @@ public class AboutPrimitives {
     @Koan
     public void doublesHaveALargeRange() {
         assertEquals(Double.MIN_VALUE, 4.9E-324);
-        assertEquals(Double.MAX_VALUE, Double.MAX_VALUE);
+        assertEquals(Double.MAX_VALUE, 1.7976931348623157E308);
     }
 
     @Koan
@@ -183,8 +183,8 @@ public class AboutPrimitives {
 
     @Koan
     public void floatsHaveASmallerRangeThanDoubles() {
-        assertEquals(Float.MIN_VALUE, Float.MIN_VALUE);
-        assertEquals(Float.MAX_VALUE, Float.MAX_VALUE);
+        assertEquals(Float.MIN_VALUE, 1.4E-45f);
+        assertEquals(Float.MAX_VALUE, 3.4028235E38f);
     }
 
     @Koan
